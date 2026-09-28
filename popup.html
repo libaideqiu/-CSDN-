@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      width: 240px;
+      margin: 0;
+      padding: 16px;
+      font-family: system-ui, "Microsoft YaHei", sans-serif;
+      color: #1a1a1a;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .title {
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .switch { position: relative; display: inline-block; width: 40px; height: 22px; }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute; inset: 0;
+      background: #ccc; border-radius: 22px;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .slider::before {
+      content: ""; position: absolute;
+      width: 16px; height: 16px; left: 3px; top: 3px;
+      background: #fff; border-radius: 50%;
+      transition: transform 0.2s;
+    }
+    .switch input:checked + .slider { background: #0084ff; }
+    .switch input:checked + .slider::before { transform: translateX(18px); }
+    .status {
+      margin: 12px 0 0;
+      padding: 8px 10px;
+      font-size: 12px;
+      border-radius: 6px;
+      background: #f6f6f6;
+      color: #646464;
+    }
+    .status.on { background: #e8f3ff; color: #0084ff; }
+    .tips { margin: 10px 0 0; font-size: 11px; color: #999; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="title">知乎 / CSDN 免登录</span>
+    <label class="switch">
+      <input type="checkbox" id="toggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+  <div id="status" class="status">加载中…</div>
+  <p class="tips">支持知乎与 CSDN：关闭登录弹窗、解锁滚动、展开"阅读全文"。开关即时生效，无需刷新页面；需要登录时请先关闭开关。</p>
+  <script src="popup.js"></script>
+</body>
+</html>

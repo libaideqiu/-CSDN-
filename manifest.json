@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "知乎/CSDN 免登录",
+  "version": "1.2.0",
+  "description": "自动关闭知乎/CSDN 登录弹窗与登录推广浮窗、解除滚动锁定、展开\"阅读全文\"、跳过登录重定向，无需登录即可流畅浏览。",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "*://*.zhihu.com/*",
+    "*://*.csdn.net/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.zhihu.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_start",
+      "all_frames": false
+    },
+    {
+      "matches": ["*://*.csdn.net/*"],
+      "js": ["csdn-content.js"],
+      "css": ["csdn.css"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "知乎/CSDN 免登录"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

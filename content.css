@@ -1,0 +1,19 @@
+/* 知乎免登录 - 隐藏登录弹窗（CSS 先于 JS 生效，避免闪现） */
+
+/* 登录弹窗容器（含扫码登录 / 账号登录表单） */
+.Modal-wrapper:has(.signFlowModal),
+.Modal-wrapper:has(.Login-flow),
+.Modal-wrapper:has([class*="signFlow"]) {
+  display: none !important;
+}
+
+/* 弹窗被隐藏后确保页面仍可滚动 */
+html:has(.Modal-wrapper:has(.signFlowModal)),
+body:has(.Modal-wrapper:has(.signFlowModal)) {
+  overflow: auto !important;
+}
+
+/* 专栏页右下角"登录即可查看"推广卡片（类名为构建哈希，失效时由 JS 文案定位兜底） */
+.css-woosw9 {
+  display: none !important;
+}

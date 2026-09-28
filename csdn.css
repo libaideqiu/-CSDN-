@@ -1,0 +1,36 @@
+/* CSDN 免登录 - 隐藏登录弹窗（CSS 先于 JS 生效，避免闪现） */
+
+/* 登录弹窗与遮罩 */
+.passport-login-container,
+.passport-login-mask,
+.login-mask,
+#passportbox {
+  display: none !important;
+}
+
+/* "登录后您可以享受以下权益"提示浮窗 */
+.passport-login-tip-container {
+  display: none !important;
+}
+
+/* 底部工具栏"觉得还不错? 一键收藏"自动弹出提示 */
+li.tool-item.is-collection .tool-active-list {
+  display: none !important;
+}
+
+/* 弹窗被隐藏后确保页面仍可滚动 */
+html:has(.passport-login-container),
+body:has(.passport-login-container) {
+  overflow: auto !important;
+}
+
+/* 正文不再被"阅读全文"折叠 */
+.hide-article-box {
+  display: none !important;
+}
+
+.article_content,
+#content_views {
+  max-height: none !important;
+  overflow: visible !important;
+}

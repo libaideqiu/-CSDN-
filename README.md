@@ -1,4 +1,4 @@
-# -CSDN-
+# Zhihu & CSDN No-Login Browser Extension
 浏览器，知乎和CSDN免登录可浏览插件
 
 使用方法：
